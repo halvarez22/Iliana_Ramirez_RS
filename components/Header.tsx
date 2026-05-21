@@ -5,8 +5,8 @@ import { useAuth } from './AuthContext';
 const Logo = () => (
     <div className="flex items-center h-12 overflow-visible">
         <img
-            src="/images/Logo.png"
-            alt="Iliana Ramirez Real State Logo"
+            src="/images/Logo RS 1.png"
+            alt="First Real State Logo"
             className="h-10 w-auto object-contain transform scale-125 origin-center -my-1"
         />
     </div>

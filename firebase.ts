@@ -5,12 +5,12 @@ import { getAuth } from "firebase/auth";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyBm6UzMSmSXwk2gUjAgRILgXXspe7N7QVk",
-  authDomain: "ileanaramirez-9e718.firebaseapp.com",
-  projectId: "ileanaramirez-9e718",
-  storageBucket: "ileanaramirez-9e718.firebasestorage.app",
-  messagingSenderId: "540280025152",
-  appId: "1:540280025152:web:8b57f86886891550bc6fa5"
+  apiKey: "AIzaSyCmtDPUPSxwG7yrBSVvKAMlu6eB-VxryGY",
+  authDomain: "first-real-estate-8bd3a.firebaseapp.com",
+  projectId: "first-real-estate-8bd3a",
+  storageBucket: "first-real-estate-8bd3a.firebasestorage.app",
+  messagingSenderId: "17737692609",
+  appId: "1:17737692609:web:67b43bb3893771f4486b40"
 };
 
 // Initialize Firebase
