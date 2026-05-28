@@ -145,5 +145,44 @@
       "btnProperties": "Ver Propiedades",
       "btnContact": "Contactar Ahora"
     }
+  },
+  "properties": {
+    "filterTitle": "Filtrar Propiedades",
+    "propertyType": "Tipo de Propiedad",
+    "typePlaceholder": "Ej: Casa",
+    "location": "Ubicación",
+    "locationPlaceholder": "Ej: Querétaro",
+    "priceRange": "Rango de Precios",
+    "bedrooms": "Habitaciones",
+    "min": "Mín.",
+    "bathrooms": "Baños",
+    "amenities": "Amenidades",
+    "clearFilters": "Limpiar Filtros",
+    "found": "propiedades encontradas",
+    "grid": "Grid",
+    "map": "Mapa",
+    "notFoundTitle": "No se encontraron propiedades",
+    "notFoundDesc": "Intenta ajustar tus filtros de búsqueda.",
+    "forRent": "En Renta",
+    "forSale": "En Venta",
+    "roomsShort": "hab.",
+    "bathsShort": "baños"
+  },
+  "amenities": {
+    "Alberca": "Alberca",
+    "Balcón": "Balcón",
+    "Capilla": "Capilla",
+    "Cuarto de servicio": "Cuarto de servicio",
+    "Elevador": "Elevador",
+    "Estacionamiento techado": "Estacionamiento techado",
+    "Fraccionamiento privado": "Fraccionamiento privado",
+    "Gimnasio": "Gimnasio",
+    "Jardín": "Jardín",
+    "Roof garden": "Roof garden",
+    "Salón de usos múltiples": "Salón de usos múltiples",
+    "Seguridad 24 horas": "Seguridad 24 horas",
+    "Terraza": "Terraza",
+    "Vista al agua": "Vista al agua",
+    "Vista al mar": "Vista al mar"
   }
 }

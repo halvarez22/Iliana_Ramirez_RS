@@ -1,6 +1,7 @@
 
 
 import React, { useState, useMemo, useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Property, PropertyFilters } from '../types';
 import MapView from './MapView';
 import Pagination from './Pagination';
@@ -22,6 +23,7 @@ interface PropertyCardProps {
 }
 
 const PropertyCard: React.FC<PropertyCardProps> = ({ property, onViewProperty, onMouseEnter, onMouseLeave }) => {
+    const { t } = useTranslation();
     const formatPrice = (price: number) => {
         return new Intl.NumberFormat('es-MX', { style: 'currency', currency: 'MXN' }).format(price);
     };
@@ -51,7 +53,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property, onViewProperty, o
                         ? 'bg-blue-500 text-white' 
                         : 'bg-green-500 text-white'
                 }`}>
-                    {property.operationType.includes('Renta') ? 'For Rent' : 'For Sale'}
+                    {property.operationType.includes('Renta') ? t('properties.forRent') : t('properties.forSale')}
                 </div>
                 <div className="absolute bottom-0 left-0 w-full h-1/3 bg-gradient-to-t from-black/70 to-transparent"></div>
                 <div className="absolute bottom-4 left-4 text-white">
@@ -62,8 +64,8 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property, onViewProperty, o
             <div className="p-6">
                 <p className="text-2xl font-extrabold text-inverland-dark mb-4">{displayPrice}</p>
                 <div className="flex justify-around text-gray-600 border-t pt-4">
-                    <span className="text-sm">🛏️ {property.bedrooms} hab.</span>
-                    <span className="text-sm">🛁 {property.bathrooms} baños</span>
+                    <span className="text-sm">🛏️ {property.bedrooms} {t('properties.roomsShort')}</span>
+                    <span className="text-sm">🛁 {property.bathrooms} {t('properties.bathsShort')}</span>
                     {/* FIX: Property 'area' does not exist on type 'Property'. Replaced with 'constructionArea'. */}
                     <span className="text-sm">🏠 {property.constructionArea} m²</span>
                 </div>
@@ -73,6 +75,7 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property, onViewProperty, o
 };
 
 const PropertyListings: React.FC<PropertyListingsProps> = ({ properties, filters, setFilters, onViewProperty }) => {
+    const { t } = useTranslation();
     const [viewMode, setViewMode] = useState<'grid' | 'map'>('grid');
     const [currentPage, setCurrentPage] = useState(1);
     const propertiesPerPage = 9;
@@ -177,18 +180,18 @@ const PropertyListings: React.FC<PropertyListingsProps> = ({ properties, filters
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 lg:gap-12">
                     {/* Filters Sidebar */}
                     <aside className="lg:col-span-1 bg-white p-4 md:p-6 rounded-lg shadow-lg self-start lg:sticky top-28">
-                        <h3 className="text-2xl font-bold text-inverland-dark mb-6 border-b pb-4">Filtrar Propiedades</h3>
+                        <h3 className="text-2xl font-bold text-inverland-dark mb-6 border-b pb-4">{t('properties.filterTitle')}</h3>
                         <div className="space-y-6">
                             <div>
-                                <label className="block text-sm font-medium text-gray-700">Tipo de Propiedad</label>
-                                <input type="text" name="type" value={filters.type || ''} onChange={handleFilterChange} className="mt-1 block w-full filter-input" placeholder="Ej: Casa"/>
+                                <label className="block text-sm font-medium text-gray-700">{t('properties.propertyType')}</label>
+                                <input type="text" name="type" value={filters.type || ''} onChange={handleFilterChange} className="mt-1 block w-full filter-input" placeholder={t('properties.typePlaceholder')}/>
                             </div>
                             <div>
-                                <label className="block text-sm font-medium text-gray-700">Ubicación</label>
-                                <input type="text" name="location" value={filters.location || ''} onChange={handleFilterChange} className="mt-1 block w-full filter-input" placeholder="Ej: Querétaro"/>
+                                <label className="block text-sm font-medium text-gray-700">{t('properties.location')}</label>
+                                <input type="text" name="location" value={filters.location || ''} onChange={handleFilterChange} className="mt-1 block w-full filter-input" placeholder={t('properties.locationPlaceholder')}/>
                             </div>
                             <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">Rango de Precios</label>
+                                <label className="block text-sm font-medium text-gray-700 mb-2">{t('properties.priceRange')}</label>
                                 <PriceRangeSlider 
                                     min={PRICE_RANGE.min}
                                     max={PRICE_RANGE.max}
@@ -198,36 +201,36 @@ const PropertyListings: React.FC<PropertyListingsProps> = ({ properties, filters
                             </div>
                             <div className="grid grid-cols-2 gap-4">
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700">Habitaciones</label>
-                                    <input type="number" name="bedrooms" min="0" value={filters.bedrooms || ''} onChange={handleFilterChange} className="mt-1 block w-full filter-input" placeholder="Mín."/>
+                                    <label className="block text-sm font-medium text-gray-700">{t('properties.bedrooms')}</label>
+                                    <input type="number" name="bedrooms" min="0" value={filters.bedrooms || ''} onChange={handleFilterChange} className="mt-1 block w-full filter-input" placeholder={t('properties.min')}/>
                                 </div>
                                 <div>
-                                    <label className="block text-sm font-medium text-gray-700">Baños</label>
-                                    <input type="number" name="bathrooms" min="0" value={filters.bathrooms || ''} onChange={handleFilterChange} className="mt-1 block w-full filter-input" placeholder="Mín."/>
+                                    <label className="block text-sm font-medium text-gray-700">{t('properties.bathrooms')}</label>
+                                    <input type="number" name="bathrooms" min="0" value={filters.bathrooms || ''} onChange={handleFilterChange} className="mt-1 block w-full filter-input" placeholder={t('properties.min')}/>
                                 </div>
                             </div>
                              <div>
-                                <label className="block text-sm font-medium text-gray-700 mb-2">Amenidades</label>
+                                <label className="block text-sm font-medium text-gray-700 mb-2">{t('properties.amenities')}</label>
                                 <div className="max-h-40 overflow-y-auto space-y-2 pr-2">
                                     {availableAmenities.map(amenity => (
                                         <label key={amenity} className="flex items-center space-x-2 cursor-pointer">
                                             <input type="checkbox" checked={(filters.amenities || []).includes(amenity)} onChange={() => handleAmenityToggle(amenity)} className="h-4 w-4 text-inverland-green rounded border-gray-300 focus:ring-inverland-green"/>
-                                            <span className="text-gray-700 capitalize text-sm">{amenity}</span>
+                                            <span className="text-gray-700 capitalize text-sm">{t(`amenities.${amenity}`, { defaultValue: amenity })}</span>
                                         </label>
                                     ))}
                                 </div>
                             </div>
-                            <button onClick={clearFilters} className="w-full text-center py-2 text-sm font-semibold text-inverland-blue hover:text-inverland-dark transition-colors">Limpiar Filtros</button>
+                            <button onClick={clearFilters} className="w-full text-center py-2 text-sm font-semibold text-inverland-blue hover:text-inverland-dark transition-colors">{t('properties.clearFilters')}</button>
                         </div>
                     </aside>
 
                     {/* Listings */}
                     <main className="lg:col-span-3">
                          <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center mb-8 gap-4">
-                             <p className="text-gray-600 font-medium">{filteredProperties.length} propiedades encontradas</p>
+                             <p className="text-gray-600 font-medium">{filteredProperties.length} {t('properties.found')}</p>
                             <div className="flex items-center space-x-2 bg-gray-200 p-1 rounded-lg">
-                                <button onClick={() => setViewMode('grid')} className={`px-4 py-2 text-sm rounded-md transition-colors ${viewMode === 'grid' ? 'bg-white text-inverland-dark shadow' : 'text-gray-600'}`}>Grid</button>
-                                <button onClick={() => setViewMode('map')} className={`px-4 py-2 text-sm rounded-md transition-colors ${viewMode === 'map' ? 'bg-white text-inverland-dark shadow' : 'text-gray-600'}`}>Mapa</button>
+                                <button onClick={() => setViewMode('grid')} className={`px-4 py-2 text-sm rounded-md transition-colors ${viewMode === 'grid' ? 'bg-white text-inverland-dark shadow' : 'text-gray-600'}`}>{t('properties.grid')}</button>
+                                <button onClick={() => setViewMode('map')} className={`px-4 py-2 text-sm rounded-md transition-colors ${viewMode === 'map' ? 'bg-white text-inverland-dark shadow' : 'text-gray-600'}`}>{t('properties.map')}</button>
                             </div>
                         </div>
 
@@ -245,8 +248,8 @@ const PropertyListings: React.FC<PropertyListingsProps> = ({ properties, filters
                                     </div>
                                 ) : (
                                     <div className="text-center py-16 bg-white rounded-lg shadow-md">
-                                        <h3 className="text-2xl font-semibold text-gray-700">No se encontraron propiedades</h3>
-                                        <p className="text-gray-500 mt-2">Intenta ajustar tus filtros de búsqueda.</p>
+                                        <h3 className="text-2xl font-semibold text-gray-700">{t('properties.notFoundTitle')}</h3>
+                                        <p className="text-gray-500 mt-2">{t('properties.notFoundDesc')}</p>
                                     </div>
                                 )}
                                 {totalPages > 1 && <Pagination currentPage={currentPage} totalPages={totalPages} onPageChange={handlePageChange} />}
@@ -273,7 +276,7 @@ const PropertyListings: React.FC<PropertyListingsProps> = ({ properties, filters
                                     ? 'bg-blue-500 text-white' 
                                     : 'bg-green-500 text-white'
                             }`}>
-                                {preview.property.operationType.includes('Renta') ? 'For Rent' : 'For Sale'}
+                                {preview.property.operationType.includes('Renta') ? t('properties.forRent') : t('properties.forSale')}
                             </div>
                         </div>
                         <h3 className="text-lg font-bold text-inverland-dark truncate">{preview.property.title}</h3>
@@ -287,8 +290,8 @@ const PropertyListings: React.FC<PropertyListingsProps> = ({ properties, filters
                             })()}
                         </p>
                         <div className="flex justify-around text-gray-600 border-t pt-2 text-sm">
-                            <span>🛏️ {preview.property.bedrooms} hab.</span>
-                            <span>🛁 {preview.property.bathrooms} baños</span>
+                            <span>🛏️ {preview.property.bedrooms} {t('properties.roomsShort')}</span>
+                            <span>🛁 {preview.property.bathrooms} {t('properties.bathsShort')}</span>
                             {/* FIX: Property 'area' does not exist on type 'Property'. Replaced with 'constructionArea'. */}
                             <span>🏠 {preview.property.constructionArea} m²</span>
                         </div>

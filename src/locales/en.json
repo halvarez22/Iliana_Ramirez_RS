@@ -145,5 +145,44 @@
       "btnProperties": "View Properties",
       "btnContact": "Contact Now"
     }
+  },
+  "properties": {
+    "filterTitle": "Filter Properties",
+    "propertyType": "Property Type",
+    "typePlaceholder": "E.g. House",
+    "location": "Location",
+    "locationPlaceholder": "E.g. Queretaro",
+    "priceRange": "Price Range",
+    "bedrooms": "Bedrooms",
+    "min": "Min.",
+    "bathrooms": "Bathrooms",
+    "amenities": "Amenities",
+    "clearFilters": "Clear Filters",
+    "found": "properties found",
+    "grid": "Grid",
+    "map": "Map",
+    "notFoundTitle": "No properties found",
+    "notFoundDesc": "Try adjusting your search filters.",
+    "forRent": "For Rent",
+    "forSale": "For Sale",
+    "roomsShort": "beds",
+    "bathsShort": "baths"
+  },
+  "amenities": {
+    "Alberca": "Pool",
+    "Balcón": "Balcony",
+    "Capilla": "Chapel",
+    "Cuarto de servicio": "Maids Room",
+    "Elevador": "Elevator",
+    "Estacionamiento techado": "Covered Parking",
+    "Fraccionamiento privado": "Gated Community",
+    "Gimnasio": "Gym",
+    "Jardín": "Garden",
+    "Roof garden": "Roof Garden",
+    "Salón de usos múltiples": "Multipurpose Room",
+    "Seguridad 24 horas": "24/7 Security",
+    "Terraza": "Terrace",
+    "Vista al agua": "Water View",
+    "Vista al mar": "Ocean View"
   }
 }
