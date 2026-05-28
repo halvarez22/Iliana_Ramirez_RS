@@ -44,7 +44,7 @@ const ContactPage: React.FC = () => {
                 phone: formData.phone,
                 subject: formData.subject,
                 message: formData.message,
-                to_email: 'hola@inverland.mx'
+                to_email: 'informes@setecled.com'
             };
             
             // Enviar email
@@ -126,9 +126,17 @@ const ContactPage: React.FC = () => {
                                         <div>
                                             <h3 className="text-xl font-bold text-ileana-navy mb-2">Dirección</h3>
                                             <p className="text-gray-700 leading-relaxed">
-                                                Nubes 219, Jardines del Moral<br />
-                                                37160 León de los Aldama, Gto.
+                                                Oro #14, Col. Colinas de San Javier<br />
+                                                Lagos de Moreno Jalisco, C.P. 47463
                                             </p>
+                                            <a 
+                                                href="https://maps.google.com/?q=Oro+14,+Colinas+de+San+Javier,+Lagos+de+Moreno+Jalisco,+47463" 
+                                                target="_blank" 
+                                                rel="noopener noreferrer" 
+                                                className="inline-block mt-2 text-ileana-orange hover:text-orange-600 font-medium transition-colors duration-300"
+                                            >
+                                                📍 Ver en Google Maps
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -143,8 +151,8 @@ const ContactPage: React.FC = () => {
                                         </div>
                                         <div>
                                             <h3 className="text-xl font-bold text-ileana-navy mb-2">Teléfono</h3>
-                                            <a href="tel:+524777871635" className="text-gray-700 hover:text-ileana-orange transition-colors duration-300">
-                                                52.477.667.0010
+                                            <a href="tel:+524421234567" className="text-gray-700 hover:text-ileana-orange transition-colors duration-300">
+                                                +52 (442) 123 4567
                                             </a>
                                         </div>
                                     </div>
@@ -160,8 +168,8 @@ const ContactPage: React.FC = () => {
                                         </div>
                                         <div>
                                             <h3 className="text-xl font-bold text-ileana-navy mb-2">Email</h3>
-                                            <a href="mailto:hola@inverland.mx" className="text-gray-700 hover:text-ileana-orange transition-colors duration-300">
-                                                hola@inverland.mx
+                                            <a href="mailto:informes@setecled.com" className="text-gray-700 hover:text-ileana-orange transition-colors duration-300">
+                                                informes@setecled.com
                                             </a>
                                         </div>
                                     </div>
@@ -177,8 +185,8 @@ const ContactPage: React.FC = () => {
                                         </div>
                                         <div>
                                             <h3 className="text-xl font-bold text-ileana-navy mb-2">WhatsApp</h3>
-                                            <a href="https://wa.me/524777871635" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-green-500 transition-colors duration-300">
-                                                +52 477 667 0010
+                                            <a href="https://wa.me/524421234567" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-green-500 transition-colors duration-300">
+                                                +52 (442) 123 4567
                                             </a>
                                         </div>
                                     </div>
@@ -329,7 +337,7 @@ const ContactPage: React.FC = () => {
                             Nuestra Ubicación
                         </h2>
                         <p className="text-lg text-gray-600">
-                            Visítanos en nuestras oficinas en León, Guanajuato
+                            Visítanos en nuestras oficinas en Lagos de Moreno, Jalisco
                         </p>
                     </div>
                     
@@ -343,7 +351,7 @@ const ContactPage: React.FC = () => {
                                 allowFullScreen
                                 loading="lazy"
                                 referrerPolicy="no-referrer-when-downgrade"
-                                title="Ubicación de Inverland - Nubes 219, Jardines del Moral, León, Guanajuato"
+                                title="Ubicación de First Real State - Lagos de Moreno, Jalisco"
                             ></iframe>
                         </div>
                     </div>
@@ -361,10 +369,10 @@ const ContactPage: React.FC = () => {
                             Nuestro equipo de expertos está aquí para ayudarte en cada paso del proceso.
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                            <a href="tel:+524777871635" className="bg-white text-ileana-navy font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-300 transform hover:scale-105 shadow-lg">
+                            <a href="tel:+524421234567" className="bg-white text-ileana-navy font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-300 transform hover:scale-105 shadow-lg">
                                 Llamar Ahora
                             </a>
-                            <a href="https://wa.me/524777871635" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-ileana-navy transition-colors duration-300">
+                            <a href="https://wa.me/524421234567" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-ileana-navy transition-colors duration-300">
                                 WhatsApp
                             </a>
                         </div>

@@ -71,7 +71,7 @@ const AppointmentModal: React.FC<AppointmentModalProps> = ({ onClose }) => {
         const toGoogleFormat = (date: Date) => date.toISOString().replace(/[-:]|\.\d{3}/g, '');
         const googleDates = `${toGoogleFormat(startTime)}/${toGoogleFormat(endTime)}`;
         const eventDetails = `Cita con ${name}.\nEmail: ${email}\nTeléfono: ${phone}\n\nNotas:\n${notes}`;
-        const eventLocation = "Oficinas de Grupo Inverland, Calle Nubes 219, Col. Jardines de Moral, 37160, León Gto. MX.";
+        const eventLocation = "Nuestra Oficina, Oro #14, Col. Colinas de San Javier, Lagos de Moreno Jalisco, C.P. 47463";
         
         const calendarUrl = new URL('https://www.google.com/calendar/render');
         calendarUrl.searchParams.append('action', 'TEMPLATE');
