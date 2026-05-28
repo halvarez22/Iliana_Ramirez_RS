@@ -12,8 +12,8 @@ const ContactSection: React.FC = () => {
     });
 
     const officeLocation = {
-        lat: 21.14519209685408,
-        lng: -101.69164941912484,
+        lat: 21.362296289321435,
+        lng: -101.94244681098512,
         address: "Oro #14, Col. Colinas de San Javier, Lagos de Moreno Jalisco, C.P. 47463"
     };
 
