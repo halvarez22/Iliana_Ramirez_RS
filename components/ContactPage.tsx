@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import emailjs from '@emailjs/browser';
 
 // EmailJS Configuration
@@ -7,6 +8,7 @@ const EMAILJS_TEMPLATE_ID = 'template_q5xy7s8';
 const EMAILJS_PUBLIC_KEY = 'Hwo6fv58nKvtLnHs2';
 
 const ContactPage: React.FC = () => {
+    const { t } = useTranslation();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -58,7 +60,7 @@ const ContactPage: React.FC = () => {
             
             // Éxito
             setSubmitStatus('success');
-            setSubmitMessage('¡Gracias por contactarnos! Te responderemos pronto.');
+            setSubmitMessage(t('contact.successMessage', '¡Gracias por contactarnos! Te responderemos pronto.'));
             
             // Limpiar formulario
             setFormData({
@@ -74,7 +76,7 @@ const ContactPage: React.FC = () => {
             
             // Error
             setSubmitStatus('error');
-            setSubmitMessage('Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o contáctanos directamente.');
+            setSubmitMessage(t('contact.errorMessage', 'Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o contáctanos directamente.'));
         } finally {
             setIsSubmitting(false);
         }
@@ -87,10 +89,10 @@ const ContactPage: React.FC = () => {
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-4xl mx-auto">
                         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 leading-tight">
-                            Contacto
+                            {t('contact.title')}
                         </h1>
                         <p className="text-lg sm:text-xl md:text-2xl text-orange-100 leading-relaxed px-2">
-                            Estamos aquí para ayudarte a encontrar la propiedad perfecta. ¡Contáctanos hoy mismo!
+                            {t('contact.subtitle')}
                         </p>
                     </div>
                 </div>
@@ -104,11 +106,10 @@ const ContactPage: React.FC = () => {
                         <div className="space-y-8">
                             <div>
                                 <h2 className="text-3xl sm:text-4xl font-bold text-ileana-navy mb-6">
-                                    Información de Contacto
+                                    {t('contact.infoTitle')}
                                 </h2>
                                 <p className="text-lg text-gray-600 mb-8">
-                                    Nuestro equipo está listo para brindarte el mejor servicio inmobiliario. 
-                                    Contáctanos por cualquiera de estos medios.
+                                    {t('contact.infoDesc')}
                                 </p>
                             </div>
 
@@ -124,7 +125,7 @@ const ContactPage: React.FC = () => {
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-bold text-ileana-navy mb-2">Dirección</h3>
+                                            <h3 className="text-xl font-bold text-ileana-navy mb-2">{t('contact.address')}</h3>
                                             <p className="text-gray-700 leading-relaxed">
                                                 Oro #14, Col. Colinas de San Javier<br />
                                                 Lagos de Moreno Jalisco, C.P. 47463
@@ -135,7 +136,7 @@ const ContactPage: React.FC = () => {
                                                 rel="noopener noreferrer" 
                                                 className="inline-block mt-2 text-ileana-orange hover:text-orange-600 font-medium transition-colors duration-300"
                                             >
-                                                📍 Ver en Google Maps
+                                                📍 {t('contact.viewMap', 'Ver en Google Maps')}
                                             </a>
                                         </div>
                                     </div>
@@ -150,7 +151,7 @@ const ContactPage: React.FC = () => {
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-bold text-ileana-navy mb-2">Teléfono</h3>
+                                            <h3 className="text-xl font-bold text-ileana-navy mb-2">{t('contact.phone')}</h3>
                                             <a href="tel:+524421234567" className="text-gray-700 hover:text-ileana-orange transition-colors duration-300">
                                                 +52 (442) 123 4567
                                             </a>
@@ -167,7 +168,7 @@ const ContactPage: React.FC = () => {
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-bold text-ileana-navy mb-2">Email</h3>
+                                            <h3 className="text-xl font-bold text-ileana-navy mb-2">{t('contact.email')}</h3>
                                             <a href="mailto:informes@setecled.com" className="text-gray-700 hover:text-ileana-orange transition-colors duration-300">
                                                 informes@setecled.com
                                             </a>
@@ -184,7 +185,7 @@ const ContactPage: React.FC = () => {
                                             </svg>
                                         </div>
                                         <div>
-                                            <h3 className="text-xl font-bold text-ileana-navy mb-2">WhatsApp</h3>
+                                            <h3 className="text-xl font-bold text-ileana-navy mb-2">{t('contact.whatsapp')}</h3>
                                             <a href="https://wa.me/524421234567" target="_blank" rel="noopener noreferrer" className="text-gray-700 hover:text-green-500 transition-colors duration-300">
                                                 +52 (442) 123 4567
                                             </a>
@@ -197,13 +198,13 @@ const ContactPage: React.FC = () => {
                         {/* Contact Form */}
                         <div className="bg-white rounded-lg shadow-lg p-6 sm:p-8">
                             <h3 className="text-xl sm:text-2xl font-bold text-ileana-navy mb-4 sm:mb-6">
-                                Envíanos un Mensaje
+                                {t('contact.formTitle')}
                             </h3>
                             <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                                     <div>
                                         <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                                            Nombre Completo *
+                                            {t('contact.name')}
                                         </label>
                                         <input
                                             type="text"
@@ -213,12 +214,12 @@ const ContactPage: React.FC = () => {
                                             onChange={handleInputChange}
                                             required
                                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ileana-orange focus:border-transparent outline-none transition-colors duration-300"
-                                            placeholder="Tu nombre completo"
+                                            placeholder={t('contact.namePlaceholder')}
                                         />
                                     </div>
                                     <div>
                                         <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                                            Email *
+                                            {t('contact.emailLabel')}
                                         </label>
                                         <input
                                             type="email"
@@ -228,7 +229,7 @@ const ContactPage: React.FC = () => {
                                             onChange={handleInputChange}
                                             required
                                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ileana-orange focus:border-transparent outline-none transition-colors duration-300"
-                                            placeholder="tu@email.com"
+                                            placeholder={t('contact.emailPlaceholder')}
                                         />
                                     </div>
                                 </div>
@@ -236,7 +237,7 @@ const ContactPage: React.FC = () => {
                                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                     <div>
                                         <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                                            Teléfono
+                                            {t('contact.phoneLabel')}
                                         </label>
                                         <input
                                             type="tel"
@@ -245,12 +246,12 @@ const ContactPage: React.FC = () => {
                                             value={formData.phone}
                                             onChange={handleInputChange}
                                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ileana-orange focus:border-transparent outline-none transition-colors duration-300"
-                                            placeholder="Tu número de teléfono"
+                                            placeholder={t('contact.phonePlaceholder')}
                                         />
                                     </div>
                                     <div>
                                         <label htmlFor="subject" className="block text-sm font-medium text-gray-700 mb-2">
-                                            Asunto *
+                                            {t('contact.subject')}
                                         </label>
                                         <select
                                             id="subject"
@@ -260,20 +261,20 @@ const ContactPage: React.FC = () => {
                                             required
                                             className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ileana-orange focus:border-transparent outline-none transition-colors duration-300"
                                         >
-                                            <option value="">Selecciona un asunto</option>
-                                            <option value="compra">Compra de Propiedad</option>
-                                            <option value="venta">Venta de Propiedad</option>
-                                            <option value="renta">Renta de Propiedad</option>
-                                            <option value="inversion">Inversión Inmobiliaria</option>
-                                            <option value="consulta">Consulta General</option>
-                                            <option value="otro">Otro</option>
+                                            <option value="">{t('contact.subjectOptions.default')}</option>
+                                            <option value="compra">{t('contact.subjectOptions.buy')}</option>
+                                            <option value="venta">{t('contact.subjectOptions.sell')}</option>
+                                            <option value="renta">{t('contact.subjectOptions.rent')}</option>
+                                            <option value="inversion">{t('contact.subjectOptions.invest')}</option>
+                                            <option value="consulta">{t('contact.subjectOptions.consult')}</option>
+                                            <option value="otro">{t('contact.subjectOptions.other')}</option>
                                         </select>
                                     </div>
                                 </div>
 
                                 <div>
                                     <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                                        Mensaje *
+                                        {t('contact.message')}
                                     </label>
                                     <textarea
                                         id="message"
@@ -283,7 +284,7 @@ const ContactPage: React.FC = () => {
                                         required
                                         rows={6}
                                         className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-ileana-orange focus:border-transparent outline-none transition-colors duration-300 resize-none"
-                                        placeholder="Cuéntanos cómo podemos ayudarte..."
+                                        placeholder={t('contact.messagePlaceholder')}
                                     />
                                 </div>
 
@@ -295,10 +296,10 @@ const ContactPage: React.FC = () => {
                                     {isSubmitting ? (
                                         <div className="flex items-center justify-center">
                                             <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
-                                            Enviando...
+                                            {t('contact.sending')}
                                         </div>
                                     ) : (
-                                        'Enviar Mensaje'
+                                        t('contact.sendButton')
                                     )}
                                 </button>
                                 
@@ -334,10 +335,10 @@ const ContactPage: React.FC = () => {
                 <div className="container mx-auto px-4 sm:px-6">
                     <div className="text-center mb-12">
                         <h2 className="text-3xl sm:text-4xl font-bold text-inverland-dark mb-4">
-                            Nuestra Ubicación
+                            {t('contact.locationTitle')}
                         </h2>
                         <p className="text-lg text-gray-600">
-                            Visítanos en nuestras oficinas en Lagos de Moreno, Jalisco
+                            {t('contact.locationDesc')}
                         </p>
                     </div>
                     
@@ -363,14 +364,14 @@ const ContactPage: React.FC = () => {
                 <div className="container mx-auto px-4 sm:px-6">
                     <div className="text-center max-w-4xl mx-auto">
                         <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-                            ¿Listo para encontrar tu próxima propiedad?
+                            {t('contact.ctaTitle')}
                         </h2>
                         <p className="text-xl mb-8 text-orange-100">
-                            Nuestro equipo de expertos está aquí para ayudarte en cada paso del proceso.
+                            {t('contact.ctaDesc')}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <a href="tel:+524421234567" className="bg-white text-ileana-navy font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-300 transform hover:scale-105 shadow-lg">
-                                Llamar Ahora
+                                {t('contact.callNow')}
                             </a>
                             <a href="https://wa.me/524421234567" target="_blank" rel="noopener noreferrer" className="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-ileana-navy transition-colors duration-300">
                                 WhatsApp

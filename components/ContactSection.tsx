@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import OfficeMap from './OfficeMap';
 
 const ContactSection: React.FC = () => {
+    const { t } = useTranslation();
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -40,8 +42,8 @@ const ContactSection: React.FC = () => {
             <div className="container mx-auto px-4 sm:px-6">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
                     <div>
-                        <h2 className="text-3xl sm:text-4xl font-extrabold text-ileana-navy mb-4">¿Listo para dar el siguiente paso?</h2>
-                        <p className="text-lg text-gray-600 mb-6">Nuestro equipo de expertos está aquí para ayudarte. Completa el formulario y nos pondremos en contacto contigo a la brevedad para asesorarte en tu próxima inversión.</p>
+                        <h2 className="text-3xl sm:text-4xl font-extrabold text-ileana-navy mb-4">{t('contact.ctaTitle')}</h2>
+                        <p className="text-lg text-gray-600 mb-6">{t('contact.infoDesc')}</p>
                         <div className="space-y-4">
                             <div className="flex items-center">
                                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-ileana-orange mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" /></svg>
@@ -68,16 +70,16 @@ const ContactSection: React.FC = () => {
                                     rel="noopener noreferrer" 
                                     className="sm:ml-9 mt-1 sm:mt-0 text-sm text-ileana-orange hover:text-orange-600 font-medium transition-colors duration-300 whitespace-nowrap"
                                 >
-                                    📍 Ver en Google Maps
+                                    {t('contact.viewMap', '📍 Ver en Google Maps')}
                                 </a>
                             </div>
                             <div className="flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-ileana-orange mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                                <span className="text-gray-700">Lunes - Viernes de 9:00 a 18:00 hrs</span>
+                                <span className="text-gray-700">{t('contact.hours', 'Lunes - Viernes de 9:00 a 18:00 hrs')}</span>
                             </div>
                         </div>
                         <div className="mt-8">
-                            <h3 className="text-2xl font-bold text-ileana-navy mb-4">Nuestras Oficinas</h3>
+                            <h3 className="text-2xl font-bold text-ileana-navy mb-4">{t('contact.ourOffices', 'Nuestras Oficinas')}</h3>
                             <OfficeMap 
                                 lat={officeLocation.lat} 
                                 lng={officeLocation.lng} 
@@ -88,25 +90,25 @@ const ContactSection: React.FC = () => {
                     <div className="bg-gray-50 p-6 md:p-8 rounded-lg shadow-xl">
                          <form onSubmit={handleSubmit} className="space-y-6">
                             <div>
-                                <label htmlFor="name" className="block text-sm font-medium text-gray-700">Nombre completo</label>
+                                <label htmlFor="name" className="block text-sm font-medium text-gray-700">{t('contact.name')}</label>
                                 <input type="text" name="name" id="name" value={formData.name} onChange={handleInputChange} required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-ileana-orange focus:border-ileana-orange bg-white text-gray-800" />
                             </div>
                             <div>
-                                <label htmlFor="email" className="block text-sm font-medium text-gray-700">Email</label>
+                                <label htmlFor="email" className="block text-sm font-medium text-gray-700">{t('contact.emailLabel')}</label>
                                 <input type="email" name="email" id="email" value={formData.email} onChange={handleInputChange} required className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-ileana-orange focus:border-ileana-orange bg-white text-gray-800" />
                             </div>
                             <div>
-                                <label htmlFor="phone" className="block text-sm font-medium text-gray-700">Teléfono</label>
+                                <label htmlFor="phone" className="block text-sm font-medium text-gray-700">{t('contact.phoneLabel')}</label>
                                 <input type="tel" name="phone" id="phone" value={formData.phone} onChange={handleInputChange} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-ileana-orange focus:border-ileana-orange bg-white text-gray-800" />
                             </div>
                             <div>
-                                <label htmlFor="message" className="block text-sm font-medium text-gray-700">Mensaje</label>
+                                <label htmlFor="message" className="block text-sm font-medium text-gray-700">{t('contact.message')}</label>
                                 <textarea name="message" id="message" value={formData.message} onChange={handleInputChange} required rows={4} className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-ileana-orange focus:border-ileana-orange bg-white text-gray-800"></textarea>
                             </div>
                             <div>
                                 <button type="submit" className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-lg font-bold text-white bg-ileana-navy hover:bg-ileana-navy/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ileana-navy transition-transform transform hover:scale-105">
-                                    Enviar Mensaje
-                                </button>
+                                {t('contact.sendButton')}
+                            </button>
                             </div>
                         </form>
                     </div>

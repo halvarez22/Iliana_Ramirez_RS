@@ -1,0 +1,149 @@
+{
+  "header": {
+    "home": "Home",
+    "properties": "Properties",
+    "services": "Services",
+    "about": "About Us",
+    "contact": "Contact",
+    "agentPortal": "Agent Portal",
+    "adminPortal": "Admin",
+    "logout": "Logout",
+    "bookAppointment": "Book Appointment",
+    "language": "Language"
+  },
+  "hero": {
+    "title": "Find your ideal home with First Real State",
+    "subtitle": "We help you find the property of your dreams, with personalized attention and guaranteed results.",
+    "searchPlaceholder": "Ex: House with pool in Queretaro",
+    "searchButton": "Search"
+  },
+  "footer": {
+    "about": "About Us",
+    "aboutText": "At First Real State we are committed to offering you the best real estate service, helping you find the perfect place for you and your family.",
+    "quickLinks": "Quick Links",
+    "home": "Home",
+    "properties": "Properties",
+    "services": "Services",
+    "contact": "Contact",
+    "contactInfo": "Contact Info",
+    "rights": "All rights reserved."
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "We are here to help you find the perfect property. Contact us today!",
+    "infoTitle": "Contact Information",
+    "infoDesc": "Our team is ready to provide you with the best real estate service. Reach out to us through any of these channels.",
+    "address": "Address",
+    "phone": "Phone",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "formTitle": "Send us a Message",
+    "name": "Full Name *",
+    "namePlaceholder": "Your full name",
+    "emailLabel": "Email *",
+    "emailPlaceholder": "your@email.com",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "Your phone number",
+    "subject": "Subject *",
+    "subjectOptions": {
+      "default": "Select a subject",
+      "buy": "Property Purchase",
+      "sell": "Property Sale",
+      "rent": "Property Rental",
+      "invest": "Real Estate Investment",
+      "consult": "General Inquiry",
+      "other": "Other"
+    },
+    "message": "Message *",
+    "messagePlaceholder": "Tell us how we can help you...",
+    "sendButton": "Send Message",
+    "sending": "Sending...",
+    "locationTitle": "Our Location",
+    "locationDesc": "Visit us at our offices in Lagos de Moreno, Jalisco",
+    "ctaTitle": "Ready to find your next property?",
+    "ctaDesc": "Our team of experts is here to help you every step of the way.",
+    "callNow": "Call Now",
+    "viewMap": "View on Google Maps",
+    "hours": "Monday - Friday, 9:00 AM to 6:00 PM",
+    "ourOffices": "Our Offices",
+    "successMessage": "Thank you for contacting us! We will get back to you soon.",
+    "errorMessage": "There was an error sending your message. Please try again or contact us directly."
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "At First Real State we don't just sell properties, we accompany you throughout the process with specialized services that guarantee your peace of mind and success.",
+    "whatItMeans": "What does this mean for you?",
+    "keyBenefit": "Key Benefit",
+    "items": [
+      {
+        "title": "Personalized Accompaniment",
+        "desc": "A First Real State expert guides you every step of the way, from the search to the signing.",
+        "benefit": "Time and Effort Savings."
+      },
+      {
+        "title": "Legal Certainty (Shielding)",
+        "desc": "We review legal documentation, encumbrances, and permits in detail. We operate with exhaustive international standard \"Due Diligence\".",
+        "benefit": "Maximum Legal Security. You avoid frauds and future problems."
+      },
+      {
+        "title": "Efficient Notary Management",
+        "desc": "We coordinate and prepare all documents for signing before a Notary, ensuring a fast and smooth process.",
+        "benefit": "Speed and Transparency."
+      },
+      {
+        "title": "Basic Tax Advice",
+        "desc": "We guide you on the taxes and deed expenses associated with your purchase or sale operation.",
+        "benefit": "Clarity in your Costs. You know exactly what you will pay."
+      },
+      {
+        "title": "Representation and Management",
+        "desc": "If you cannot be present, we can legally represent you to advance the paperwork with a power of attorney.",
+        "benefit": "Total Flexibility (Ideal for citizens abroad)."
+      }
+    ],
+    "cta": {
+      "title": "Ready to experience our services?",
+      "subtitle": "Contact us and discover how we can make your real estate experience exceptional.",
+      "btnProperties": "View Properties",
+      "btnContact": "Contact Now"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "At First Real State, we understand that finding the perfect place to call home is a crucial step in every person's life.",
+    "mission": {
+      "title": "Our Mission",
+      "desc": "Our mission is to provide our clients with personalized, high-quality service focused on the protection and ethical management of their assets in a professional and transparent manner.",
+      "commitmentTitle": "Total Commitment",
+      "commitmentDesc": "With every client and project"
+    },
+    "values": {
+      "title": "Our Values",
+      "subtitle": "The principles that guide each of our actions and decisions",
+      "val1Title": "Honesty and Transparency",
+      "val1Desc": "Our staff is trained to act professionally, loyally, and ethically in all interactions, ensuring transparency in every transaction.",
+      "val2Title": "Collaboration",
+      "val2Desc": "We encourage active collaboration among all team members, working together to achieve a common goal that translates into an improved experience for our clients.",
+      "val3Title": "Service",
+      "val3Desc": "Our clients' satisfaction is our highest priority in every real estate process. The trust they place in us is our greatest achievement."
+    },
+    "impact": {
+      "title": "Our Impact",
+      "subtitle": "Transforming the real estate landscape in Mexico",
+      "stat1Num": "500+",
+      "stat1Desc": "Managed Properties",
+      "stat2Num": "1000+",
+      "stat2Desc": "Satisfied Clients",
+      "stat3Num": "15+",
+      "stat3Desc": "Years of Experience",
+      "stat4Num": "50+",
+      "stat4Desc": "Specialized Agents"
+    },
+    "cta": {
+      "title": "Ready to find your ideal home?",
+      "subtitle": "Let us help you find the perfect property that fits your needs and dreams.",
+      "btnProperties": "View Properties",
+      "btnContact": "Contact Now"
+    }
+  }
+}

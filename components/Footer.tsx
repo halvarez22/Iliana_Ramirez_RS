@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { NAV_LINKS } from '../constants';
+import { useTranslation } from 'react-i18next';
 
 const SocialIcon: React.FC<{ href: string, children: React.ReactNode }> = ({ href, children }) => (
     <a href={href} target="_blank" rel="noopener noreferrer" className="text-ileana-orange hover:text-orange-400 transition-colors duration-300">
@@ -10,6 +11,19 @@ const SocialIcon: React.FC<{ href: string, children: React.ReactNode }> = ({ hre
 );
 
 const Footer: React.FC = () => {
+    const { t } = useTranslation();
+
+    const getTranslatedNavLink = (href: string, defaultName: string) => {
+        const keyMap: Record<string, string> = {
+            '#home': 'footer.home',
+            '#properties': 'footer.properties',
+            '#servicios': 'footer.services',
+            '#about': 'footer.about',
+            '#contact': 'footer.contact',
+        };
+        return keyMap[href] ? t(keyMap[href]) : defaultName;
+    };
+
     return (
         <footer className="bg-ileana-navy text-ileana-white">
             <div className="container mx-auto px-4 sm:px-6 py-8 md:py-12">
@@ -20,13 +34,13 @@ const Footer: React.FC = () => {
                                 <img src="/images/Logo RS 1.png" alt="First Real State Logo" className="w-12 h-12 object-contain" onError={(e) => console.error('Footer logo failed to load:', e)} />
                             </div>
                         </div>
-                        <p className="text-ileana-white font-body leading-relaxed">Tu aliada confiable en el sector inmobiliario, dedicada a hacer realidad tus sueños de hogar con atención personalizada.</p>
+                        <p className="text-ileana-white font-body leading-relaxed">{t('footer.aboutText')}</p>
                     </div>
                     <div>
-                        <h3 className="font-bold text-lg mb-4">Navegación</h3>
+                        <h3 className="font-bold text-lg mb-4">{t('footer.quickLinks')}</h3>
                         <ul className="space-y-2">
                             {NAV_LINKS.map(link => (
-                                <li key={link.name}><a href={link.href} className="text-ileana-orange hover:text-orange-400 transition-colors">{link.name}</a></li>
+                                <li key={link.name}><a href={link.href} className="text-ileana-orange hover:text-orange-400 transition-colors">{getTranslatedNavLink(link.href, link.name)}</a></li>
                             ))}
                         </ul>
                     </div>
@@ -47,7 +61,7 @@ const Footer: React.FC = () => {
                     </div>
                 </div>
                 <div className="mt-8 pt-8 border-t border-ileana-orange text-center text-ileana-orange">
-                    <p>&copy; {new Date().getFullYear()} First Real State. Todos los derechos reservados.</p>
+                    <p>&copy; {new Date().getFullYear()} First Real State. {t('footer.rights')}</p>
                 </div>
             </div>
         </footer>

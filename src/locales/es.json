@@ -1,0 +1,149 @@
+{
+  "header": {
+    "home": "Inicio",
+    "properties": "Propiedades",
+    "services": "Servicios",
+    "about": "Nosotros",
+    "contact": "Contacto",
+    "agentPortal": "Portal Agentes",
+    "adminPortal": "Admin",
+    "logout": "Cerrar Sesión",
+    "bookAppointment": "Agendar Cita",
+    "language": "Idioma"
+  },
+  "hero": {
+    "title": "Encuentra tu hogar ideal con First Real State",
+    "subtitle": "Te ayudamos a encontrar la propiedad de tus sueños, con atención personalizada y resultados garantizados.",
+    "searchPlaceholder": "Ej: Casa con alberca en Querétaro",
+    "searchButton": "Buscar"
+  },
+  "footer": {
+    "about": "Acerca de Nosotros",
+    "aboutText": "En First Real State estamos comprometidos en ofrecerte el mejor servicio inmobiliario, ayudándote a encontrar el lugar perfecto para ti y tu familia.",
+    "quickLinks": "Enlaces Rápidos",
+    "home": "Inicio",
+    "properties": "Propiedades",
+    "services": "Servicios",
+    "contact": "Contacto",
+    "contactInfo": "Contacto",
+    "rights": "Todos los derechos reservados."
+  },
+  "contact": {
+    "title": "Contacto",
+    "subtitle": "Estamos aquí para ayudarte a encontrar la propiedad perfecta. ¡Contáctanos hoy mismo!",
+    "infoTitle": "Información de Contacto",
+    "infoDesc": "Nuestro equipo está listo para brindarte el mejor servicio inmobiliario. Contáctanos por cualquiera de estos medios.",
+    "address": "Dirección",
+    "phone": "Teléfono",
+    "email": "Email",
+    "whatsapp": "WhatsApp",
+    "formTitle": "Envíanos un Mensaje",
+    "name": "Nombre Completo *",
+    "namePlaceholder": "Tu nombre completo",
+    "emailLabel": "Email *",
+    "emailPlaceholder": "tu@email.com",
+    "phoneLabel": "Teléfono",
+    "phonePlaceholder": "Tu número de teléfono",
+    "subject": "Asunto *",
+    "subjectOptions": {
+      "default": "Selecciona un asunto",
+      "buy": "Compra de Propiedad",
+      "sell": "Venta de Propiedad",
+      "rent": "Renta de Propiedad",
+      "invest": "Inversión Inmobiliaria",
+      "consult": "Consulta General",
+      "other": "Otro"
+    },
+    "message": "Mensaje *",
+    "messagePlaceholder": "Cuéntanos cómo podemos ayudarte...",
+    "sendButton": "Enviar Mensaje",
+    "sending": "Enviando...",
+    "locationTitle": "Nuestra Ubicación",
+    "locationDesc": "Visítanos en nuestras oficinas en Lagos de Moreno, Jalisco",
+    "ctaTitle": "¿Listo para encontrar tu próxima propiedad?",
+    "ctaDesc": "Nuestro equipo de expertos está aquí para ayudarte en cada paso del proceso.",
+    "callNow": "Llamar Ahora",
+    "viewMap": "Ver en Google Maps",
+    "hours": "Lunes - Viernes de 9:00 a 18:00 hrs",
+    "ourOffices": "Nuestras Oficinas",
+    "successMessage": "¡Gracias por contactarnos! Te responderemos pronto.",
+    "errorMessage": "Hubo un error al enviar el mensaje. Por favor, intenta de nuevo o contáctanos directamente."
+  },
+  "services": {
+    "title": "Nuestros Servicios",
+    "subtitle": "En First Real State no solo vendemos propiedades, te acompañamos en todo el proceso con servicios especializados que garantizan tu tranquilidad y éxito.",
+    "whatItMeans": "¿Qué significa para ti?",
+    "keyBenefit": "Beneficio Clave",
+    "items": [
+      {
+        "title": "Acompañamiento Personalizado",
+        "desc": "Un experto de First Real State te guía en cada paso, desde la búsqueda hasta la firma.",
+        "benefit": "Ahorro de Tiempo y Esfuerzo."
+      },
+      {
+        "title": "Certeza Legal (Blindaje)",
+        "desc": "Revisamos a detalle la documentación legal, gravámenes y permisos. Operamos con un \"Due Diligence\" exhaustivo de estándar internacional.",
+        "benefit": "Máxima Seguridad Jurídica. Evitas fraudes y problemas a futuro."
+      },
+      {
+        "title": "Gestión Notarial Eficiente",
+        "desc": "Coordinamos y preparamos todos los documentos para la firma ante Notario, asegurando un proceso rápido y sin contratiempos.",
+        "benefit": "Rapidez y Transparencia."
+      },
+      {
+        "title": "Asesoría Fiscal Básica",
+        "desc": "Te orientamos sobre los impuestos y gastos de escrituración asociados a tu operación de compra o venta.",
+        "benefit": "Claridad en tus Costos. Sabes exactamente lo que pagarás."
+      },
+      {
+        "title": "Representación y Gestión",
+        "desc": "Si no puedes estar presente, podemos representarte legalmente para avanzar en los trámites con un poder notarial.",
+        "benefit": "Flexibilidad Total (Ideal para mexicanos en el extranjero)."
+      }
+    ],
+    "cta": {
+      "title": "¿Listo para experimentar nuestros servicios?",
+      "subtitle": "Contáctanos y descubre cómo podemos hacer que tu experiencia inmobiliaria sea excepcional.",
+      "btnProperties": "Ver Propiedades",
+      "btnContact": "Contactar Ahora"
+    }
+  },
+  "about": {
+    "title": "Sobre Nosotros",
+    "subtitle": "En First Real State, entendemos que encontrar el lugar perfecto para llamar hogar es un paso crucial en la vida de cada persona.",
+    "mission": {
+      "title": "Nuestra Misión",
+      "desc": "Nuestra misión es proporcionar a nuestros clientes un servicio personalizado y de alta calidad, centrado en la protección y gestión ética de su patrimonio de manera profesional y transparente.",
+      "commitmentTitle": "Compromiso Total",
+      "commitmentDesc": "Con cada cliente y proyecto"
+    },
+    "values": {
+      "title": "Nuestros Valores",
+      "subtitle": "Los principios que guían cada una de nuestras acciones y decisiones",
+      "val1Title": "Honestidad y Transparencia",
+      "val1Desc": "Nuestro personal está capacitado para actuar de manera profesional, leal y ética en todas sus interacciones con las personas, asegurando la transparencia en cada transacción.",
+      "val2Title": "Colaboración",
+      "val2Desc": "Fomentamos la colaboración activa entre todos los miembros de nuestro equipo, trabajando juntos para alcanzar un objetivo común que se traduzca en una experiencia mejorada para nuestros clientes.",
+      "val3Title": "Servicio",
+      "val3Desc": "La satisfacción de nuestros clientes es nuestra máxima prioridad en cada trámite y proceso inmobiliario. La confianza que depositan en nosotros es nuestro mayor logro."
+    },
+    "impact": {
+      "title": "Nuestro Impacto",
+      "subtitle": "Transformando el panorama inmobiliario de México",
+      "stat1Num": "500+",
+      "stat1Desc": "Propiedades Gestionadas",
+      "stat2Num": "1000+",
+      "stat2Desc": "Clientes Satisfechos",
+      "stat3Num": "15+",
+      "stat3Desc": "Años de Experiencia",
+      "stat4Num": "50+",
+      "stat4Desc": "Agentes Especializados"
+    },
+    "cta": {
+      "title": "¿Listo para encontrar tu hogar ideal?",
+      "subtitle": "Permítenos ayudarte a encontrar la propiedad perfecta que se adapte a tus necesidades y sueños.",
+      "btnProperties": "Ver Propiedades",
+      "btnContact": "Contactar Ahora"
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const SearchIcon = () => (
     <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
@@ -13,6 +14,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ onSearch, isSearching }) => {
     const [query, setQuery] = useState('');
+    const { t } = useTranslation();
 
     const handleSearchSubmit = (e: React.FormEvent) => {
         e.preventDefault();
@@ -29,8 +31,8 @@ const Hero: React.FC<HeroProps> = ({ onSearch, isSearching }) => {
                 <div className="flex justify-center mb-4 sm:mb-6 md:mb-8">
                     <img src="/images/Logo RS 1.png" alt="First Real State Logo" className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] object-contain drop-shadow-lg" />
                 </div>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-3 sm:mb-4 md:mb-6 drop-shadow-lg leading-tight">Encuentra tu hogar ideal con First Real State</h1>
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto mb-6 sm:mb-8 md:mb-10 drop-shadow-md px-2">Te ayudamos a encontrar la propiedad de tus sueños, con atención personalizada y resultados garantizados.</p>
+                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extrabold mb-3 sm:mb-4 md:mb-6 drop-shadow-lg leading-tight">{t('hero.title')}</h1>
+                <p className="text-sm sm:text-base md:text-lg lg:text-xl max-w-2xl mx-auto mb-6 sm:mb-8 md:mb-10 drop-shadow-md px-2">{t('hero.subtitle')}</p>
                 
                 <div className="bg-white/95 backdrop-blur-sm p-3 sm:p-4 md:p-6 rounded-2xl shadow-ileana-lg max-w-4xl mx-auto border border-white/20">
                     <form onSubmit={handleSearchSubmit} className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-stretch sm:items-center">
@@ -38,9 +40,9 @@ const Hero: React.FC<HeroProps> = ({ onSearch, isSearching }) => {
                             type="text"
                             value={query}
                             onChange={(e) => setQuery(e.target.value)}
-                            placeholder="Ej: Casa con alberca en Querétaro"
+                            placeholder={t('hero.searchPlaceholder')}
                             className="w-full flex-grow p-3 sm:p-4 rounded-xl border border-ileana-orange/30 bg-white text-ileana-black text-sm sm:text-base focus:ring-2 focus:ring-ileana-orange focus:border-ileana-orange outline-none min-h-[48px] font-body"
-                            aria-label="Búsqueda de propiedades"
+                            aria-label={t('hero.searchButton')}
                         />
                         <button 
                             type="submit" 
@@ -52,7 +54,7 @@ const Hero: React.FC<HeroProps> = ({ onSearch, isSearching }) => {
                             ) : (
                                 <>
                                     <SearchIcon />
-                                    <span className="ml-2">Buscar</span>
+                                    <span className="ml-2">{t('hero.searchButton')}</span>
                                 </>
                             )}
                         </button>

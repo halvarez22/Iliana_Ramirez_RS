@@ -1,4 +1,6 @@
 import React from 'react';
+import { useTranslation } from 'react-i18next';
+import { Trans } from 'react-i18next';
 
 type View = 'home' | 'login' | 'dashboard' | 'userPortal' | 'propertyDetail' | 'addProperty' | 'editProperty' | 'agents' | 'tracking' | 'userManagement' | 'clients' | 'marketing' | 'analytics' | 'agentPortal' | 'clientDetail' | 'agentPropertyDetail' | 'about' | 'contact';
 
@@ -8,11 +10,8 @@ interface AboutPageProps {
 }
 
 const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onNavigateToProperties }) => {
-    console.log('AboutPage - onNavigate:', onNavigate);
-    console.log('AboutPage - onNavigateToProperties:', onNavigateToProperties);
-    console.log('AboutPage - typeof onNavigate:', typeof onNavigate);
-    console.log('AboutPage - typeof onNavigateToProperties:', typeof onNavigateToProperties);
-    
+    const { t } = useTranslation();
+
     return (
         <div className="bg-white">
             {/* Hero Section */}
@@ -20,10 +19,10 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onNavigateToPropertie
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="text-center max-w-4xl mx-auto">
                         <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 sm:mb-6 leading-tight">
-                            Sobre Nosotros
+                            {t('about.title')}
                         </h1>
                         <p className="text-lg sm:text-xl md:text-2xl text-orange-100 leading-relaxed px-2">
-                            En First Real State, entendemos que encontrar el lugar perfecto para llamar <strong>hogar</strong> es un paso crucial en la vida de cada persona.
+                            <Trans i18nKey="about.subtitle" components={{ strong: <strong /> }} />
                         </p>
                     </div>
                 </div>
@@ -35,7 +34,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onNavigateToPropertie
                     <div className="max-w-6xl mx-auto">
                         <div className="text-center mb-8 sm:mb-12">
                             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-ileana-navy mb-6 sm:mb-8 font-heading">
-                                Nuestra Misión
+                                {t('about.mission.title')}
                             </h2>
                         </div>
                         
@@ -56,8 +55,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onNavigateToPropertie
                             <div className="order-1 lg:order-2">
                                 <div className="bg-white rounded-2xl shadow-ileana-lg p-6 sm:p-8 md:p-10 lg:p-12 border border-ileana-orange/20">
                                     <p className="text-base sm:text-lg md:text-xl text-ileana-navy leading-relaxed font-body">
-                                        Nuestra misión es proporcionar a nuestros clientes un <strong className="text-ileana-orange">servicio personalizado</strong> y de <strong className="text-ileana-orange">alta calidad</strong>,
-                                        centrado en la protección y <strong className="text-ileana-orange">gestión ética</strong> de su <strong className="text-ileana-orange">patrimonio</strong> de manera profesional y transparente.
+                                        <Trans i18nKey="about.mission.desc" components={{ strong: <strong className="text-ileana-orange" /> }} />
                                     </p>
                                     
                                     <div className="mt-6 sm:mt-8">
@@ -68,8 +66,8 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onNavigateToPropertie
                                                 </svg>
                                             </div>
                                             <div>
-                                                <h3 className="text-lg font-bold text-ileana-navy font-heading">Compromiso Total</h3>
-                                                <p className="text-sm text-ileana-orange font-body">Con cada cliente y proyecto</p>
+                                                <h3 className="text-lg font-bold text-ileana-navy font-heading">{t('about.mission.commitmentTitle')}</h3>
+                                                <p className="text-sm text-ileana-orange font-body">{t('about.mission.commitmentDesc')}</p>
                                             </div>
                                         </div>
                                     </div>
@@ -85,10 +83,10 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onNavigateToPropertie
                 <div className="container mx-auto px-4 sm:px-6">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl sm:text-4xl font-bold text-ileana-navy mb-4">
-                            Nuestros Valores
+                            {t('about.values.title')}
                         </h2>
                         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                            Los principios que guían cada una de nuestras acciones y decisiones
+                            {t('about.values.subtitle')}
                         </p>
                     </div>
 
@@ -101,11 +99,10 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onNavigateToPropertie
                                 </svg>
                             </div>
                             <h3 className="text-xl font-bold text-ileana-navy mb-4">
-                                Honestidad y Transparencia
+                                {t('about.values.val1Title')}
                             </h3>
                             <p className="text-gray-700 leading-relaxed">
-                                Nuestro personal está capacitado para actuar de manera profesional, leal y ética en todas sus interacciones 
-                                con las personas, asegurando la transparencia en cada transacción.
+                                {t('about.values.val1Desc')}
                             </p>
                         </div>
 
@@ -117,11 +114,10 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onNavigateToPropertie
                                 </svg>
                             </div>
                             <h3 className="text-xl font-bold text-ileana-navy mb-4">
-                                Colaboración
+                                {t('about.values.val2Title')}
                             </h3>
                             <p className="text-gray-700 leading-relaxed">
-                                Fomentamos la colaboración activa entre todos los miembros de nuestro equipo, trabajando juntos para 
-                                alcanzar un objetivo común que se traduzca en una experiencia mejorada para nuestros clientes.
+                                {t('about.values.val2Desc')}
                             </p>
                         </div>
 
@@ -133,11 +129,10 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onNavigateToPropertie
                                 </svg>
                             </div>
                             <h3 className="text-xl font-bold text-ileana-navy mb-4">
-                                Servicio
+                                {t('about.values.val3Title')}
                             </h3>
                             <p className="text-gray-700 leading-relaxed">
-                                La satisfacción de nuestros clientes es nuestra máxima prioridad en cada trámite y proceso inmobiliario. 
-                                La confianza que depositan en nosotros es nuestro mayor logro.
+                                {t('about.values.val3Desc')}
                             </p>
                         </div>
                     </div>
@@ -149,29 +144,29 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onNavigateToPropertie
                 <div className="container mx-auto px-4 sm:px-6">
                     <div className="text-center mb-16">
                         <h2 className="text-3xl sm:text-4xl font-bold mb-4">
-                            Nuestro Impacto
+                            {t('about.impact.title')}
                         </h2>
                         <p className="text-xl text-orange-100">
-                            Transformando el panorama inmobiliario de México
+                            {t('about.impact.subtitle')}
                         </p>
                     </div>
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
                         <div className="text-center">
-                            <div className="text-4xl sm:text-5xl font-bold text-ileana-orange mb-2">500+</div>
-                            <div className="text-orange-100">Propiedades Gestionadas</div>
+                            <div className="text-4xl sm:text-5xl font-bold text-ileana-orange mb-2">{t('about.impact.stat1Num')}</div>
+                            <div className="text-orange-100">{t('about.impact.stat1Desc')}</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-4xl sm:text-5xl font-bold text-ileana-orange mb-2">1000+</div>
-                            <div className="text-orange-100">Clientes Satisfechos</div>
+                            <div className="text-4xl sm:text-5xl font-bold text-ileana-orange mb-2">{t('about.impact.stat2Num')}</div>
+                            <div className="text-orange-100">{t('about.impact.stat2Desc')}</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-4xl sm:text-5xl font-bold text-ileana-orange mb-2">15+</div>
-                            <div className="text-orange-100">Años de Experiencia</div>
+                            <div className="text-4xl sm:text-5xl font-bold text-ileana-orange mb-2">{t('about.impact.stat3Num')}</div>
+                            <div className="text-orange-100">{t('about.impact.stat3Desc')}</div>
                         </div>
                         <div className="text-center">
-                            <div className="text-4xl sm:text-5xl font-bold text-ileana-orange mb-2">50+</div>
-                            <div className="text-orange-100">Agentes Especializados</div>
+                            <div className="text-4xl sm:text-5xl font-bold text-ileana-orange mb-2">{t('about.impact.stat4Num')}</div>
+                            <div className="text-orange-100">{t('about.impact.stat4Desc')}</div>
                         </div>
                     </div>
                 </div>
@@ -182,10 +177,10 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onNavigateToPropertie
                 <div className="container mx-auto px-4 sm:px-6">
                     <div className="text-center max-w-4xl mx-auto">
                         <h2 className="text-3xl sm:text-4xl font-bold mb-6">
-                            ¿Listo para encontrar tu hogar ideal?
+                            {t('about.cta.title')}
                         </h2>
                         <p className="text-xl mb-8 text-orange-100">
-                            Permítenos ayudarte a encontrar la propiedad perfecta que se adapte a tus necesidades y sueños.
+                            {t('about.cta.subtitle')}
                         </p>
                         <div className="flex flex-col sm:flex-row gap-4 justify-center">
                             <button
@@ -199,7 +194,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onNavigateToPropertie
                                 }}
                                 className="bg-white text-ileana-navy font-bold px-8 py-4 rounded-lg hover:bg-gray-100 transition-colors duration-300 transform hover:scale-105 shadow-lg"
                             >
-                                Ver Propiedades
+                                {t('about.cta.btnProperties')}
                             </button>
                             <button
                                 onClick={() => {
@@ -212,7 +207,7 @@ const AboutPage: React.FC<AboutPageProps> = ({ onNavigate, onNavigateToPropertie
                                 }}
                                 className="border-2 border-white text-white font-bold px-8 py-4 rounded-lg hover:bg-white hover:text-ileana-navy transition-colors duration-300"
                             >
-                                Contactar Ahora
+                                {t('about.cta.btnContact')}
                             </button>
                         </div>
                     </div>
